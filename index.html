@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROXY MAPPER</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#090909;
+  color:white;
+  font-family:Arial,sans-serif;
+  padding:22px;
+}
+header{
+  text-align:center;
+  padding:25px 0;
+}
+h1{color:#ff2525;font-size:32px}
+p{color:#aaa}
+.card{
+  background:#191919;
+  border:1px solid #383838;
+  border-radius:14px;
+  padding:18px;
+  margin:15px 0;
+}
+button{
+  width:100%;
+  padding:15px;
+  margin-top:10px;
+  background:#e51d2a;
+  color:white;
+  border:0;
+  border-radius:9px;
+  font-weight:bold;
+  font-size:16px;
+}
+button:active{background:#a90010}
+.status{color:#36d875}
+</style>
+</head>
+<body>
+<header>
+<h1>PROXY MAPPER</h1>
+<p>Seu controle. Seu estilo. Seu jogo.</p>
+</header>
+
+<div class="card">
+<h2>🎮 Meus jogos</h2>
+<button onclick="selecionar('Free Fire')">FREE FIRE</button>
+<button onclick="selecionar('Outro jogo')">OUTRO JOGO</button>
+<p id="jogo">Nenhum jogo selecionado</p>
+</div>
+
+<div class="card">
+<h2>⌨️ Teclado</h2>
+<p>Configuração de teclas</p>
+<button onclick="testarTecla()">TESTAR TECLADO</button>
+<p id="tecla">Aguardando teste</p>
+</div>
+
+<div class="card">
+<h2>🖱️ Mouse</h2>
+<p>Teste de conexão e cliques</p>
+<button onclick="testarMouse()">TESTAR MOUSE</button>
+<p id="mouse">Aguardando teste</p>
+</div>
+
+<div class="card">
+<h2>⚙️ Configurações</h2>
+<p class="status">Interface inicial carregada</p>
+<button onclick="alert('Editor visual em desenvolvimento!')">
+EDITOR DE CONTROLES
+</button>
+</div>
+
+<script>
+function selecionar(nome){
+ document.getElementById('jogo').textContent=
+ 'Jogo selecionado: '+nome;
+}
+function testarTecla(){
+ document.getElementById('tecla').textContent=
+ 'Pressione uma tecla do teclado';
+ window.onkeydown=function(e){
+ document.getElementById('tecla').textContent=
+ 'Tecla detectada: '+e.key;
+ };
+}
+function testarMouse(){
+ document.getElementById('mouse').textContent=
+ 'Clique detectado na tela!';
+}
+</script>
+</body>
+</html>
